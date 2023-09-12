@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ListaProdutos } from "../components/ListaProdutos";
 import classEstilos from "./Produtos.module.css";
+import {AiFillEdit as Editar} from "react-icons/ai";
 
 export default function Produtos() {
 
@@ -30,7 +31,7 @@ export default function Produtos() {
                         <td className={classEstilos.tableData}>{produto.desc}</td>
                         <td className={classEstilos.tableData}>{produto.preco}</td>
                         <td className={classEstilos.tableData}>
-                            <Link to={`/editar/produtos/${produto.id}`}>Editar</Link>
+                            <Link to={`/editar/produtos/${produto.id}`}><Editar/></Link>
                         </td>
                       </tr>
 
