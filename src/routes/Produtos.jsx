@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ListaProdutos } from "../components/ListaProdutos";
+import classEstilos from "./Produtos.module.css";
 
 export default function Produtos() {
 
@@ -8,14 +9,14 @@ export default function Produtos() {
         <h1>Produtos de INFORMÁTICA - FIPAPI</h1>
         <p>Os Melhores Produtos do Mercado</p>
         
-        <table style={{borderCollapse:"collapse" , border:"2px solid #ffffff"}}>
+        <table className={classEstilos.estiloTabela}>
             <thead>
                 <tr>
-                    <th >ID</th>
-                    <th >NOME</th>
-                    <th >DESCRIÇÃO</th>
-                    <th >PREÇO</th>
-                    <th >EDITAR</th>
+                    <th className={classEstilos.tableHeaders}>ID</th>
+                    <th className={classEstilos.tableHeaders}>NOME</th>
+                    <th className={classEstilos.tableHeaders}>DESCRIÇÃO</th>
+                    <th className={classEstilos.tableHeaders}>PREÇO</th>
+                    <th className={classEstilos.tableHeaders}>EDITAR</th>
 
                 </tr>
             </thead>
@@ -23,12 +24,12 @@ export default function Produtos() {
             <tbody>
                 {ListaProdutos.map((produto,indice)=>(
 
-                      <tr key={indice}>
-                        <td>{produto.id}</td>
-                        <td>{produto.nome}</td>
-                        <td>{produto.desc}</td>
-                        <td>{produto.preco}</td>
-                        <td>
+                      <tr key={indice} className={classEstilos.tableLine}>
+                        <td className={classEstilos.tableData}>{produto.id}</td>
+                        <td className={classEstilos.tableData}>{produto.nome}</td>
+                        <td className={classEstilos.tableData}>{produto.desc}</td>
+                        <td className={classEstilos.tableData}>{produto.preco}</td>
+                        <td className={classEstilos.tableData}>
                             <Link to={`/editar/produtos/${produto.id}`}>Editar</Link>
                         </td>
                       </tr>
